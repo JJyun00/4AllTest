@@ -1,10 +1,10 @@
-function toggleTextbox(checkbox) {
-    const textbox_elem = document.getElementById('check');
-    textbox_elem.disabled = checkbox.checked ? false : true;
-    if(textbox_elem.disabled) {
-      textbox_elem.value = disabled;
+function chkbox(checkbox) {
+    const chkevent = document.getElementById('check');
+    chkevent.disabled = checkbox.checked ? false : true;
+    if(chkevent.disabled) {
+        chkevent.disabled = true;
     }else {
-      textbox_elem.focus();
+        chkevent.disabled = false;
     }
   }
   
