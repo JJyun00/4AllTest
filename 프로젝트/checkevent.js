@@ -1,7 +1,10 @@
-function agreeCheck(frm)
-{
-   if (frm.checkButton.disabled==true)
-    frm.checkButton.disabled=false
-   else
-    frm.checkButton.disabled=true
-}
+function toggleTextbox(checkbox) {
+    const textbox_elem = document.getElementById('check');
+    textbox_elem.disabled = checkbox.checked ? false : true;
+    if(textbox_elem.disabled) {
+      textbox_elem.value = disabled;
+    }else {
+      textbox_elem.focus();
+    }
+  }
+  
