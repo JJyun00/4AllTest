@@ -1,6 +1,6 @@
 //웹서버에 html 파일 서비스
 
-var fttp = require('http');
+var http = require('http');
 var fs = require('fs');     //파일 읽기, 쓰기 등 할 수 있는 모듈
 const { Http2ServerRequest } = require('http2');
 
