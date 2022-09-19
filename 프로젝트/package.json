@@ -1,0 +1,14 @@
+{
+  "name": "getest",
+  "version": "1.0.0",
+  "description": "test node server",
+  "main": "checkevent.js",
+  "scripts": {
+    "test": "\"blabla\""
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "",
+  "license": "ISC"
+}
