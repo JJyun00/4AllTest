@@ -5,19 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KallisPrep</title>
+    <script src = "js/jquery.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style-all.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+
 </head>
 <body>
     <header>
         <h1 class="name">GETest</h1>
     </header>
     <section>
-        <div id="test">Test arear</div>
-        <div><button class="btn1" id ="btn"> 회사소개 </button></div>
-        <div><button class="btn2" id ="btn"> 사업소개 </button></div>
-        <div><button class="btn3" id ="btn"> 정보입력 </button></div>
+        <div><button class="btn" id ="btn1"> 회사소개 </button></div>
+        <div><button class="btn" id ="btn2"> 사업소개 </button></div>
+        <div><button class="btn" id ="btn3"> 정보입력 </button></div>
         <!-- <div><button class="btn1" id="btn-all" onclick="location.href='CI.html'">Company Introduction</button></div>
         <div><button class="btn2" id="btn-all" onclick="location.href='BI.html'">Business Introduction</button></div>
         <div><button class="btn3" id="btn-all" onclick="location.href='information.html'">Enter Personal Information</button></div> -->
@@ -27,15 +32,48 @@
 
     <!-- 페이지 이동  -->
 <script>
-    document.querySelector('.btn1').addEventListener('click',e=>{
-    window.location = 'CI.html';	
-    });
-    document.querySelector('.btn2').addEventListener('click',e=>{
-    window.location = 'BI.html';	
-    });
-    document.querySelector('.btn3').addEventListener('click',e=>{
-    window.location = 'information.html';	
-    });
+    // //1
+    // document.querySelector('.btn1').addEventListener('click',e=>{
+    // window.location = 'CI.html';	
+    // });
+    // document.querySelector('.btn2').addEventListener('click',e=>{
+    // window.location = 'BI.html';	
+    // });
+    // document.querySelector('.btn3').addEventListener('click',e=>{
+    // window.location = 'information.html';	
+    // });
+
+    //2
+    // 두 번 클릭해야 넘어가ㅁ
+    // $(".btn1").click(function(){
+    //     document.querySelector('.btn1').addEventListener('click', e=>{
+    //     window.location = 'CI.html';
+    //     });
+    // });  
+    // $(".btn2").click(function(){
+    //     document.querySelector('.btn2').addEventListener('click', e=>{
+    //     window.location = 'BI.html';
+    //     });
+    // });
+    // $(".btn3").click(function(){
+    //     document.querySelector('.btn3').addEventListener('click', e=>{
+    //     window.location = 'information.html';
+    //     });
+    // });
+    
+
+    //질문1 : 서버에 파일들 로드 안 되는 거 어케 해결?
+  
+    document.addEventListener('click', function(e){
+        if(e.srcElement.id == "btn1")
+        //window.location="CI.html";
+        location.href = "CI.html";
+        else if(e.srcElement.id == "btn2") 
+        window.location="BI.html";
+        else if(e.srcElement.id == "btn3")
+        window.location='information.html';
+        });
+
 </script>
 
 <style>
@@ -58,7 +96,7 @@ body {
     font-weight: bold;
 }
 
-#btn-all {
+.btn {
     width : 150px;
     height: 50px;
     position: static;
@@ -69,25 +107,25 @@ body {
     transition: 0.5s;
 }
 
-#btn-all:hover {
+.btn :hover {
     letter-spacing: 2px;
     transform: scale(1.2);
     cursor: pointer;
 }
 
-.btn1 {
+#btn1 {
     background-color: skyblue;
     color: #1e6b7b;
     margin: 20px;
 }
 
-.btn2 {
+#btn2 {
     background-color: rgb(235, 202, 135);
     color: #1e6b7b;
     margin: 20px;
 }
 
-.btn3 {
+#btn3 {
     background-color: rgb(235, 135, 147);
     color: #1e6b7b;
     margin-top: 20px;
