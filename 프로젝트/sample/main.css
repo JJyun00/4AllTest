@@ -1,0 +1,113 @@
+/* body{
+    
+} */
+html {
+    background-color: #677386;
+}
+h1 {
+    display: block;
+    font-size: 70px;
+    margin-top: 110px;
+    text-align: center; 
+    font-weight: bold;
+}
+h1 span:nth-child(1){
+    color: #2cf14d;
+}
+h1 span:nth-child(2){
+    color: #fffb00;
+}
+h1 span:nth-child(3){
+    color: #4285f4;
+}
+h1 span:nth-child(4){
+    color: #000000;
+}
+h1 span:nth-child(5){
+    color: #000000;
+}
+h1 span:nth-child(6){
+    color: #000000;
+}
+
+.form1 {
+    display:block;
+    text-align: center;
+    margin: 0 auto;
+    /* width: 0 auto; */
+    width: 600px;;
+    height: 50px;
+    border: none;
+    border-radius: 24px;
+    background-color: rgb(255, 255, 255);
+}
+
+#blank {
+    display: inline-flex;
+    margin-top: 7px;
+    text-align: center;
+    width: 500px;
+    height: 30px;
+    border: solid 1px;
+    border-color:white;
+}
+
+#submit {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-image: "https://cdn-icons-png.flaticon.com/512/2866/2866321.png";
+}
+
+.form2 {
+    display:block;
+    text-align: center;
+    /* margin-top: 15px; */
+}
+.test {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: none;
+    font-weight: bold;
+
+}
+
+/*   
+.menu {
+    height:34px;
+    position: relative;  
+}
+  
+.menu .search input {
+    width:36px;
+    height:34px;
+    padding: 4px 10px;
+    border:1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color:#777;
+    font-size: 12px;
+    transition: width .4s;
+}
+  
+.menu .search input:focus{
+    width:190px;
+    border-color:#616952;
+}
+  
+.menu .search .material-icons{
+    height:24px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:5px;
+    margin:auto;
+} */
