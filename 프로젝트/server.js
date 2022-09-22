@@ -1,25 +1,28 @@
-let http = require('http');
-let fs = require('fs');     //파일 읽기, 쓰기 등 할 수 있는 모듈
+// 기본 설정
+const express = require("express");  // 웹서버 사용
+const server = express();
 
-//404 error message : 페이지 오류 발생했을때,
-function send404Message(response){
-    response.writeHead(404, {"Content-Type":"text/plain"});     //단순한 글자 출력
-    response.write("404 ERROR...");
-    response.end();
-}
+// 정적 파일 불러오기
+server.use(express.static(__dirname + "/css"));
 
-// 200 Okay : 정상적인 요청
-function onRequest(request, response){
+// 라우팅 정의
+server.get("/", (req, res) => {
+  res.sendFile(__dirname + "/GETest.html");
+});
 
-    if(request.method == 'GET' && request.url == '/') {
-        response.writeHead(200, {"Content-Type":"text/html"});      //웹페이지 출력
-        fs.createReadStream("./GETest.html").pipe(response);     //같은 디렉토리에 있는 GETest.html 을 response함
+server.get("/CI.html", (req, res) => {
+  res.sendFile(__dirname + "/CI.html");
+});
 
-    } else {
-        send404Message(response);       //file이 존재하지 않을 때
+server.get("/BI.html", (req, res) => {
+  res.sendFile(__dirname + "/BI.html");
+});
 
-    }
-}
+server.get("/information.html", (req, res) => {
+  res.sendFile(__dirname + "/information.html");
+});
 
-http.createServer(onRequest).listen(8888);
-console.log("Server Created...");
+// 서버 실행
+server.listen(8888, () => {
+  console.log(`Listen : 8888`);
+});
