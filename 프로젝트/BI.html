@@ -22,8 +22,17 @@
         </p>
     </div>
     <div>
-        <button class="btn4" onclick="location.href='GETest.html'">prev</button>
+        <button id="testbutton">SAMPLE</button>
     </div>
-
+    <div>
+        <button class="btn4" onclick="location.href='GETest.html'">X</button>
+    </div>
 </body>
 </html>
+
+<script>
+    document.addEventListener('click', function(e) {
+        if(e.srcElement.id == "testbutton")
+            location.href = "sample/main.html";
+    });
+</script>
