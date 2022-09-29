@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div>
+    <header>
         <div>
             <h1 class="name"> 
                 <span>G</span>
@@ -21,24 +21,32 @@
                 <span>t</span>
             </h1>
         </div>
+    </header>
+
         <div>
             <form class="form1" action="http://www.google.com/search" method="get" method="target">
                 <input type="text" name="q" id="blank" placeholder="TEST SEARCH">
-                <input type="submit" id="submit" value="search">
+                <input type="submit" id="submit" value=" ">
             </form>
         </div>
-
-        <div>
-            <form class="form2">
-                <button class="test" id="SAT">SAT</button>
-                <button class="test" id="ACT">ACT</button>
-                <button class="test" id="TOEFL">TOEFL</button>
-                <button class="test">+</button>
-            </form>
-        </div>
-    </div>
+    </section>
+    <section>
+      <button class="test" id="SAT">SAT</button>
+      <button class="test" id="IELTS">IELTS</button>
+      <button class="test" id="TOEFL">TOEFL</button>
+    </section>   
     <div><button class="btn4" onclick="location.href='../GETest.html'">X</button></div>
-
+    
+    <script>
+        document.addEventListener('click',function(e) {
+            if(e.srcElement.id=="SAT")
+                location.href = 'http://dev.kallisprep.com/course/sat';
+            else if(e.srcElement.id=="IELTS")
+                location.href = 'http://dev.kallisprep.com/course/ielts';
+            else if(e.srcElement.id=="TOEFL")
+                location.href = 'http://dev.kallisprep.com/course/toefl';
+        });
+    </script>
 </body>
 </html>
 
