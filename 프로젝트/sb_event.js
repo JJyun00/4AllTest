@@ -1,3 +1,0 @@
-function sbevent() {
-    alert('CLREAR');
-}
