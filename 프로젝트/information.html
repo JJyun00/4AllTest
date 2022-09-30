@@ -11,7 +11,10 @@
 <body style="overflow:auto;">
     <!-- <header> -->
         <h3 class="name">GETest</h3>
-        
+        <h3  style="margin-bottom: 5%;">
+            더 많은 정보를 제공받길 원하면<br>
+            정보를 남겨주세요.
+        </h3>
     <!-- </header> -->
         
     <div><form action="/information" method="POST">
@@ -68,8 +71,8 @@
 </html>
 
 <!-- 
-    // id 번호 초기화
-delete from info where id=38;
+    // mysql에서 delete시, id 번호 초기화
+delete from info;
 ALTER TABLE info auto_increment=1;
 set @count =0;
 update info set id=@count:=@count+1;
