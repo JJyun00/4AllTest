@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Information</title>
+    <link rel="stylesheet" type="text/css" href="css/style-all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body style="overflow:auto;">
+    <div class="all_wrap">
+        <!-- <header> -->
+        <h1 class="main_logo">
+            <a href="./GETest.html"><img src="./images/logo.png" alt="4 All Test"></a>
+        </h1>
+        <h3  style="margin-bottom: 5%;">
+            If you would like to receive more information,<br>
+            please leave your information
+        </h3>
+        <!-- </header> -->
+        
+        <div>
+            <form action="/information" method="POST">
+                <fieldset style="margin:0 20%;">
+                    <legend>Enter Information</legend>
+                    <ul>
+                        <li>
+                            <label for="username">Name</label>
+                            <input type="text" class="user" id="username" name="name">
+                        </li>
+                        <li>
+                            <label for="usermail">E-Mail</label>
+                            <input type="email" class="user" id="usermail" name="email">
+                        </li>
+                        <li>
+                            <label for="usertel">Tel.</label>
+                            <input type="tel" class="user" id="usertel" name="tel">
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <h4>Do you agree to the collection and use of personal information to provide information?
+                    <br>Collected personal information will be destroyed after data is provided.
+                </h4>
+                <ul>
+                    <li>
+                        <input type = "checkbox" value="perin" id="chk" onclick="chkbox(this)">
+                        <label for="chk">Agree</label>
+                    </li>
+                </ul>
+                <button type='submit' id="check" disabled="false" onclick="sbevent()">Submit</button>
+            </form>
+        </div>
+        <div>
+            <button class="btn4" onclick="location.href='GETest.html'"> MAIN </button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    // Methods
+    function sbevent() {
+        console.log("click!!");
+        window.open('popup.html', "a", "width=400, height=300, left=100, top=50");   // submit 버튼 클릭 팝업
+    }
+
+    // 동의 체크박스 클릭시, Submit 활성화
+    function chkbox(checkbox) {
+    const chkevent = document.getElementById('check');
+    chkevent.disabled = checkbox.checked ? false : true;
+    if(chkevent.disabled) {
+      chkevent.disabled = true;
+    }else {
+        chkevent.disabled = false;
+    }
+  }
+</script>
+
+</html>
+
+<!-- 
+    // mysql에서 delete시, id 번호 초기화
+delete from info;
+ALTER TABLE info auto_increment=1;
+set @count =0;
+update info set id=@count:=@count+1;
+ -->

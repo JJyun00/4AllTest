@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AllTest</title>
+
+    <link rel="stylesheet" href="css/style-all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+</head>
+<body style="overflow:auto;">
+    <div class="all_wrap">
+        <header>
+            <!--
+            <h1 class="name">
+                <span>4</span>
+                <span>A</span>
+                <span>l</span>
+                <span>l</span>
+                <span>T</span>
+                <span>e</span>
+                <span>s</span>
+                <span>t</span>
+            </h1>
+            -->
+            <h1 class="main_logo">
+                <a href="./GETest.html"><img src="./images/logo.png" alt="4 All Test"></a>
+            </h1>
+        </header>
+        <!-- <table width="60%" height="100%">
+            <tr>
+                <td style="border-right:1 " width="45%">
+                사진?
+                </td>
+                <td width="55%">
+                    NAME_  Hong Kim <br>
+                    Email_  00000000@gmail.com <br>
+                    PH_  01000000000 <br>
+                </td>
+            </tr>
+        </table>
+        <hr 50%> -->
+        <div>
+            <!-- <div><button class="btn" id ="btn1"> 회사소개 </button></div> -->
+            <div><button class="btn" id ="btn2"> Business Introduction </button></div>
+            <div><button class="btn" id ="btn3"> FeedBack </button></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 페이지 이동  -->
+<script>
+    document.addEventListener('click', function(e){
+        if(e.srcElement.id == "btn1") {
+            //window.location="CI.html";
+            location.href = "CI.html";
+        } else if(e.srcElement.id == "btn2")  {
+            window.location="BI.html";
+        }
+        else if(e.srcElement.id == "btn3") {
+            window.location='information.html';
+        }
+        });
+</script> 
