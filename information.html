@@ -39,6 +39,26 @@
                         </li>
                     </ul>
                 </fieldset>
+                <br>
+                <div><select class="country" required> <!-- required 속성을 덧붙여주면 해당 셀렉트 태그의 선택이 필수 선택으로 지정됨 -->
+                    <option value="" disabled selected>Country</option>
+                    <option value="알라스카(미국)">Alaska(U.S.A) - 1</option>
+                    <option value="호주">Australia - 61</option>
+                    <option value="오스트리아">Austria - 43</option>
+                    <option value="벨기에">Belgium - 32</option>
+                    <option value="브라질">Brazil - 55</option>
+                    <option value="캐나다">Canada - 1</option>
+                    <option value="중국">China(P.R.C) - 86</option>
+                    <option value="대만">Taiwan - 886</option>
+                    <option value="콜롬비아">Colombia - 57</option>
+                    <option value="덴마크">Denmark - 45</option>
+                    <option value="이집트">Egypt - 20</option>
+                    <option value="프랑스">France - 33</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select></div>
 
                 <h4>Do you agree to the collection and use of personal information to provide information?
                     <br>Collected personal information will be destroyed after data is provided.
@@ -72,6 +92,7 @@
     chkevent.disabled = checkbox.checked ? false : true;
     if(chkevent.disabled) {
       chkevent.disabled = true;
+
     }else {
         chkevent.disabled = false;
     }
