@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/sample_main.css">
+    <link rel="stylesheet" href="../css/style-all.css">
+    <title>4AllTest</title>
+</head>
+
+<body style="overflow:auto;">
+    <div class="all_wrap">
+        <!--
+        <h1 class="name" style="width:100%"> 
+            <span>4</span>
+            <span>A</span>
+            <span>l</span>
+            <span>l</span>
+            <span>T</span>
+            <span>e</span>
+            <span>s</span>
+            <span>t</span>
+        </h1>
+        -->
+        <h1 class="main_logo">
+            <a href="../GETest.html"><img src="../images/logo.png" alt="4 All Test"></a>
+        </h1>
+        <div>
+            <form class="form1" action="http://www.google.com/search" method="get" method="target">
+                <input type="text" name="q" id="blank" placeholder="TEST SEARCH">
+                <input type="submit" id="submit" value=" ">
+            </form>
+        </div>
+
+        <div class="btnBox">
+            <button class="test" id="SAT">SAT</button>
+            <button class="test" id="IELTS">IELTS</button>
+            <button class="test" id="TOEFL">TOEFL</button>
+        </div>
+    </div>
+    <div><button class="btn4" onclick="location.href='../GETest.html'">MAIN</button></div>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener('click', function(e){
+        if(e.srcElement.id =="SAT")
+            window.location="http://dev.kallisprep.com/course/sat";
+        // else if(e.srcElement.id == "IELTS")
+        //     window.location="http://dev.kallisprep.com/course/ielts";
+        // else if(e.srcElement.id=="TOEFL")
+        //     window.location="http://dev.kallisprep.com/course/toefl";
+        });
+</script>
+
+<style>
+
+</style>
