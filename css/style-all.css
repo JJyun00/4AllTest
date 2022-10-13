@@ -33,7 +33,7 @@ select::-ms-expand {display:none;}
 .main_logo a {display: block; width: 100%; height: 100%;}
 .main_logo img {width: 100%; height: auto;}
 
-
+.bi { text-align: left;}
 
 .scroll{
     -ms-overflow-style: none; /*익스플로러,엣지*/
