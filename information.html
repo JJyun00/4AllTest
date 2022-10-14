@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter Information</title>
     <link rel="stylesheet" type="text/css" href="css/style-all.css">
+    <link rel="stylesheet" href="country.json">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        
+        <!-- jQuery 사용하여 JSON 객체 이용 -->
+        <!-- Import jQuery cdn library -->
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+
+    <script>
+    
+</script>
 </head>
 <body style="overflow:auto;">
     <div class="all_wrap">
@@ -22,43 +31,28 @@
         
         <div>
             <form action="/information" method="POST">
-                <fieldset style="margin:0 20%;">
-                    <legend>Enter Information</legend>
-                    <ul>
-                        <li>
-                            <label for="username">Name</label>
-                            <input type="text" class="user" id="username" name="name">
-                        </li>
-                        <li>
-                            <label for="usermail">E-Mail</label>
-                            <input type="email" class="user" id="usermail" name="email">
-                        </li>
-                        <li>
-                            <label for="usertel">Tel.</label>
-                            <input type="tel" class="user" id="usertel" name="tel">
-                        </li>
-                    </ul>
+                <fieldset>
+                    <p><h3 id="ei">Enter Infromation</h3><br></p>
+                    <div id="fstname">
+                        <div class="info_label"><label for="username">Name</label></div>
+                        <div class="info_label"><input type="text" class="user" id="username_1" name="first_name" placeholder="First Name"></div>
+                    </div>
+                    <div>
+                        <div class="info_label"><input type="text" class="user" id="username_2" name="last_name" placeholder="Last Name"></div>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="info_label"><label for="usermail" class="info_label">E-Mail</label></div>
+                        <div class="info_label"><input type="email" class="user" id="usermail" name="email"></div>
+                    <div><br>
+                        <div class="info_label"><button> Select Country</button></div>
+                        <div id="Country"></div><br>
+                    <div>
+                        <div class="info_label"><label for="usertel" class="info_label">Tel.</label></div>
+                        <div class="info_label"><input type="tel" class="user" id="usertel" name="tel"></div>
+                    </div>
                 </fieldset>
                 <br>
-                <div><select class="country" required> <!-- required 속성을 덧붙여주면 해당 셀렉트 태그의 선택이 필수 선택으로 지정됨 -->
-                    <option value="" disabled selected>Country</option>
-                    <option value="알라스카(미국)">Alaska(U.S.A) - 1</option>
-                    <option value="호주">Australia - 61</option>
-                    <option value="오스트리아">Austria - 43</option>
-                    <option value="벨기에">Belgium - 32</option>
-                    <option value="브라질">Brazil - 55</option>
-                    <option value="캐나다">Canada - 1</option>
-                    <option value="중국">China(P.R.C) - 86</option>
-                    <option value="대만">Taiwan - 886</option>
-                    <option value="콜롬비아">Colombia - 57</option>
-                    <option value="덴마크">Denmark - 45</option>
-                    <option value="이집트">Egypt - 20</option>
-                    <option value="프랑스">France - 33</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select></div>
 
                 <h4>Do you agree to the collection and use of personal information to provide information?
                     <br>Collected personal information will be destroyed after data is provided.
@@ -69,6 +63,7 @@
                         <label for="chk">Agree</label>
                     </li>
                 </ul>
+                <br>
                 <button type='submit' id="check" disabled="false" onclick="sbevent()">Submit</button>
             </form>
         </div>
@@ -92,11 +87,241 @@
     chkevent.disabled = checkbox.checked ? false : true;
     if(chkevent.disabled) {
       chkevent.disabled = true;
-
     }else {
         chkevent.disabled = false;
-    }
-  }
+    }}
+
+// jQuery 사용하여 JSON 객체 이용 test
+$(document).ready(function(){
+        let Country = [
+            {"Country": "Afghanistan",            "Code": 93                },
+            {"Country": "Albania",            "Code": 355        },
+            {"Country": "Algeria",            "Code": 213        },
+            {"Country": "American Samoa",            "Code": 1684                },
+            {"Country": "Andorra",            "Code": 376        },
+            {"Country": "Angola",            "Code": 244        },
+            {"Country": "Anguilla",            "Code": 1264        },
+            {"Country": "Antigua and Barbuda",            "Code": 1268        },
+            {"Country": "Argentina",            "Code": 54        },
+            {"Country": "Armenia",            "Code": 374        },
+            {"Country": "Aruba",            "Code": 297        },
+            {"Country": "Australia",            "Code": 61        },
+            {"Country": "Austria",            "Code": 43        },
+            {"Country": "Azerbaijan",            "Code": 994        },
+            {"Country": "Bahamas",            "Code": 1242        },
+            {"Country": "Bahrain",            "Code": 973        },
+            {            "Country": "Bangladesh",            "Code": 880        },
+            {            "Country": "Barbados",            "Code": 1246        },
+            {            "Country": "Belarus",            "Code": 375        },
+            {            "Country": "Belgium",            "Code": 32        },
+            {            "Country": "Belize",            "Code": 501        },
+            {            "Country": "Benin",            "Code": 229        },
+            {            "Country": "Bermuda",            "Code": 1441        },
+            {            "Country": "Bhutan",            "Code": 975        },
+            {            "Country": "Bolivia",            "Code": 591        },
+            {            "Country": "Bosnia and Herzegovina",            "Code": 387        },
+            {            "Country": "Botswana",            "Code": 267        },
+            {            "Country": "Brazil",            "Code": 55        },
+            {            "Country": "Brunei",            "Code": 673        },
+            {            "Country": "Bulgaria",            "Code": 359        },
+            {            "Country": "Burkina Faso",            "Code": 226        },
+            {            "Country": "Burundi",            "Code": 257        },
+            {            "Country": "Cambodia",            "Code": 855        },
+            {            "Country": "Cameroon",            "Code": 237        },
+            {            "Country": "Canada",            "Code": 1        },
+            {            "Country": "Cape Verde",            "Code": 238        },
+            {            "Country": "Cayman Islands",            "Code": 1345        },
+            {            "Country": "Central Africa",            "Code": 236        },
+            {            "Country": "Chad",            "Code": 235        },
+            {            "Country": "Chile",            "Code": 56        },
+            {            "Country": "China",            "Code": 86        },
+            {            "Country": "Colombia",            "Code": 57        },
+            {            "Country": "Congo",            "Code": 242        },
+            {            "Country": "Cook Islands",            "Code": 682        },
+            {            "Country": "Costa Rica",            "Code": 506        },
+            {            "Country": "Croatia",            "Code": 385        },
+            {            "Country": "Cuba",            "Code": 53        },
+            {            "Country": "Cyprus",            "Code": 357        },
+            {            "Country": "Czech",            "Code": 420        },
+            {            "Country": "Denmark",            "Code": 45        },
+            {            "Country": "Djibouti",            "Code": 253        },
+            {            "Country": "Dominica",            "Code": 1767        },
+            {            "Country": "Dominican R.",            "Code": 1809        },
+            {            "Country": "DPR of Korea",            "Code": 850        },
+            {            "Country": "DR Congo",            "Code": 243        },
+            {            "Country": "East Timor",            "Code": 670        },
+            {            "Country": "Ecuador",            "Code": 593        },
+            {            "Country": "Egypt",            "Code": 20        },
+            {            "Country": "El Salvador",            "Code": 503        },
+            {            "Country": "Equatorial Guinea",            "Code": 240        },
+            {            "Country": "Eritrea",            "Code": 291        },
+            {            "Country": "Estonia",            "Code": 372        },
+            {            "Country": "Eswatini",            "Code": 268        },
+            {            "Country": "Ethiopia",            "Code": 251        },
+            {            "Country": "Falkland Islands",            "Code": 500        },
+            {            "Country": "Fiji",            "Code": 679        },
+            {            "Country": "Finland",            "Code": 358        },
+            {            "Country": "France",            "Code": 33        },
+            {            "Country": "Gabon",            "Code": 241        },
+            {            "Country": "Gambia",            "Code": 220        },
+            {            "Country": "Georgia",            "Code": 995        },
+            {            "Country": "Germany",            "Code": 49        },
+            {            "Country": "Ghana",            "Code": 233        },
+            {            "Country": "Gibraltar",            "Code": 350        },
+            {            "Country": "Greece",            "Code": 30        },
+            {            "Country": "Greenland",            "Code": 299        },
+            {            "Country": "Grenada",            "Code": 1473        },
+            {            "Country": "Guadeloupe",            "Code": 590        },
+            {            "Country": "Guam",            "Code": 1671        },
+            {            "Country": "Guatemala",            "Code": 502        },
+            {            "Country": "Guinea",            "Code": 224        },
+            {            "Country": "Guinea-Bissau",            "Code": 245        },
+            {            "Country": "Guyana",            "Code": 592        },
+            {            "Country": "Haiti",            "Code": 509        },
+            {            "Country": "Honduras",            "Code": 504        },
+            {            "Country": "Hong Kong",            "Code": 852        },
+            {            "Country": "Hungary",            "Code": 36        },
+            {            "Country": "Iceland",            "Code": 354        },
+            {            "Country": "India",            "Code": 91        },
+            {            "Country": "Indonesia",            "Code": 62        },
+            {            "Country": "Iran",            "Code": 98        },
+            {            "Country": "Iraq",            "Code": 964        },
+            {            "Country": "Ireland",            "Code": 353        },
+            {            "Country": "Israel",            "Code": 972        },
+            {            "Country": "Italy",            "Code": 39        },
+            {            "Country": "Ivory Coast",            "Code": 225        },
+            {            "Country": "Jamaica",            "Code": 1876        },
+            {            "Country": "Japan",            "Code": 81        },
+            {            "Country": "Jordan",            "Code": 962        },
+            {            "Country": "Kazakstan",            "Code": 7        },
+            {            "Country": "Kenya",            "Code": 254        },
+            {            "Country": "Kiribati",            "Code": 686        },
+            {            "Country": "Kuwait",            "Code": 965        },
+            {            "Country": "Kyrgizstan",            "Code": 996        },
+            {            "Country": "Laos",            "Code": 856        },
+            {            "Country": "Latvia",            "Code": 371        },
+            {            "Country": "Lebanon",            "Code": 961        },
+            {            "Country": "Lesotho",            "Code": 266        },
+            {            "Country": "Liberia",            "Code": 231        },
+            {            "Country": "Libya",            "Code": 218        },
+            {            "Country": "Liechtenstein",            "Code": 423        },
+            {            "Country": "Lithuania",            "Code": 370        },
+            {            "Country": "Luxembourg",            "Code": 352        },
+            {            "Country": "Macao",            "Code": 853        },
+            {            "Country": "Macedonia",            "Code": 389        },
+            {            "Country": "Madagascar",            "Code": 261        },
+            {            "Country": "Malawi",            "Code": 265        },
+            {            "Country": "Malaysia",            "Code": 60        },
+            {            "Country": "Maldives",            "Code": 960        },
+            {            "Country": "Maldova",            "Code": 373        },
+            {            "Country": "Mali",            "Code": 223        },
+            {            "Country": "Malta",            "Code": 356        },
+            {            "Country": "Marshall Islands",            "Code": 692        },
+            {            "Country": "Martinique",            "Code": 596        },
+            {            "Country": "Mauritania",            "Code": 222        },
+            {            "Country": "Mauritius",            "Code": 230        },
+            {            "Country": "Mayotte",            "Code": 269        },
+            {            "Country": "Mexico",            "Code": 52        },
+            {            "Country": "Micronesia",            "Code": 691        },
+            {            "Country": "Monaco",            "Code": 377        },
+            {            "Country": "Mongolia",            "Code": 976        },
+            {            "Country": "Montenegro",            "Code": 382        },
+            {            "Country": "Montserrat",            "Code": 1664        },
+            {            "Country": "Morocco",            "Code": 212        },
+            {            "Country": "Mozambique",            "Code": 258        },
+            {            "Country": "Myanmar",            "Code": 95        },
+            {            "Country": "Namibia",            "Code": 264        },
+            {            "Country": "Nauru",            "Code": 674        },
+            {            "Country": "Nepal",            "Code": 977        },
+            {            "Country": "New Caledonia",            "Code": 687        },
+            {            "Country": "New Zealand",            "Code": 64        },
+            {            "Country": "Nicaragua",            "Code": 505        },
+            {            "Country": "Niger",            "Code": 227        },
+            {            "Country": "Nigeria",            "Code": 234        },
+            {            "Country": "Niue",            "Code": 683        },
+            {            "Country": "Norway",            "Code": 47        },
+            {            "Country": "Oman",            "Code": 968        },
+            {            "Country": "Pakistan",            "Code": 92        },
+            {            "Country": "Palau",            "Code": 680        },
+            {            "Country": "Panama",            "Code": 507        },
+            {            "Country": "Papua New Guinea",            "Code": 675        },
+            {            "Country": "Paraguay",            "Code": 595        },
+            {            "Country": "Peru",            "Code": 51        },
+            {            "Country": "Poland",            "Code": 48        },
+            {            "Country": "Portugal",            "Code": 351        },
+            {            "Country": "Puerto Rico",            "Code": 1787        },
+            {            "Country": "Qatar",            "Code": 974        },
+            {            "Country": "Republic of Korea",            "Code": 82        },
+            {            "Country": "Romania",            "Code": 40        },
+            {            "Country": "Russia",            "Code": 7        },
+            {            "Country": "Rwanda",            "Code": 250        },
+            {            "Country": "Saint Helena",            "Code": 290        },
+            {            "Country": "Saint Lucia",            "Code": 1758        },
+            {            "Country": "Saint Pierre and Miquelon",            "Code": 508        },
+            {            "Country": "Samoa",            "Code": 685        },
+            {            "Country": "San Marino",            "Code": 378        },
+            {            "Country": "Saudi Arabia",            "Code": 966        },
+            {            "Country": "Senegal",            "Code": 221        },
+            {            "Country": "Serbia",            "Code": 381        },
+            {            "Country": "Seychelles",            "Code": 248        },
+            {            "Country": "Sierra Leone",            "Code": 232        },
+            {            "Country": "Singapore",            "Code": 65        },
+            {            "Country": "Sint Maarten",            "Code": 1721        },
+            {            "Country": "Slovakia",            "Code": 421        },
+            {            "Country": "Slovenia",            "Code": 386        },
+            {            "Country": "Solomon Islands",            "Code": 677        },
+            {            "Country": "Somalia",            "Code": 252        },
+            {            "Country": "South Africa",            "Code": 27        },
+            {            "Country": "South Sudan",            "Code": 211        },
+            {            "Country": "Spain",            "Code": 34        },
+            {            "Country": "Sri Lanka",            "Code": 94        },
+            {            "Country": "State of Palestine",            "Code": 970        },
+            {            "Country": "Sudan",            "Code": 249        },
+            {            "Country": "Suriname",            "Code": 597        },
+            {            "Country": "Sweden",            "Code": 46        },
+            {            "Country": "Switzerland",            "Code": 41        },
+            {            "Country": "Syria",            "Code": 963        },
+            {            "Country": "Taiwan",            "Code": 886        },
+            {            "Country": "Tajikistan",            "Code": 992        },
+            {            "Country": "Tanzania",            "Code": 255        },
+            {            "Country": "Thailand",            "Code": 66        },
+            {            "Country": "the Comoros",            "Code": 269        },
+            {            "Country": "the Netherlands",            "Code": 31        },
+            {            "Country": "the Philippines",            "Code": 63        },
+            {            "Country": "Togo",            "Code": 228        },
+            {            "Country": "Tokelau",            "Code": 690        },
+            {            "Country": "Tonga",            "Code": 676        },
+            {            "Country": "Trinidad and Tobago",            "Code": 1868        },
+            {            "Country": "Tunisia",            "Code": 216        },
+            {            "Country": "Turkey",            "Code": 90        },
+            {            "Country": "Turkmenistan",            "Code": 993        },
+            {            "Country": "Tuvalu",            "Code": 688        },
+            {            "Country": "Uganda",            "Code": 256        },
+            {            "Country": "Ukraine",            "Code": 380        },
+            {"Country": "United Arab Emirates",  "Code": 971        },
+            {"Country": "United Kingdom",  "Code": 44},
+            {"Country": "United States of America","Code": 1},
+            {"Country": "Uruguay","Code": 598},
+            {"Country": "Uzbekistan","Code": 998},
+            {"Country": "Vanuatu","Code": 678},
+            {"Country": "Vatican","Code": 379},
+            {"Country": "Venezuela", "Code": 58},
+            {"Country": "Vietnam", "Code": 84},
+            {"Country": "Western Sahara", "Code": 212},
+            {"Country": "Yemen", "Code": 967},
+            {"Country": "Zambia", "Code": 260},
+            {"Country": "Zimbabwe", "Code": 263}
+        ];
+    $('button').click(function(){
+        let select = $("<select></select>")
+            .attr("Country", "Code");
+        $.each(Country, function(index, Country){
+            select.append($("<option></option>")
+                .attr("value", Country.Code).text(Country.Country));
+        });
+        $("#Country").html(select);
+        });
+    });
 </script>
 
 </html>
