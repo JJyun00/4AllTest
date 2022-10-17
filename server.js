@@ -3,7 +3,7 @@ const path = require('path')
 const express = require("express");  // 웹서버 사용
 const bodyParser = require('body-parser')
 const app = express();
-const PORT = 8888;
+const PORT = 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
