@@ -12,7 +12,9 @@
         <!-- jQuery 사용하여 JSON 객체 이용 -->
         <!-- Import jQuery cdn library -->
         <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+
 </head>
+
 <body style="overflow:auto;">
     <div class="all_wrap">
         <!-- <header> -->
@@ -31,16 +33,21 @@
                     <p><h3 id="ei">Enter Infromation</h3><br></p>
                     <div id="fstname">
                         <div class="info_label"><label for="username">Name</label></div>
-                        <div class="info_label"><input type="text" class="user" id="username_1"placeholder="First Name"></div>
+                        <div class="info_label"><input type="text" class="user" id="username_1" name="first_name" placeholder="First Name"></div>
+                    </div>
+                    <div>
+                        <div class="info_label"><input type="text" class="user" id="username_2" name="last_name" placeholder="Last Name"></div>
                     </div>
                     <br>
                     <div>
                         <div class="info_label"><label for="usermail" class="info_label">E-Mail</label></div>
                         <div class="info_label"><input type="email" class="user" id="usermail" name="email"></div>
-                    <div><br>
-                        
-                    <div>
-                        <select onchange="document.getElementById('mid').value = this.options[this.selectedIndex].value">
+                    </div><br>
+
+                    <div class="info_label">
+                        <div class="info_label"><label for="usertel" class="info_label">Country</label></div>
+                        <select  onchange="document.getElementById('usertel').value = this.options[this.selectedIndex].value">
+                            <option>Select</option>
                             <option value="93 ">"Afghanistan"</option>
                             <option value="355 ">"Albania"</option>
                             <option value="213 ">"Algeria</option>
@@ -258,11 +265,14 @@
                             <option value="967 ">"Yemen"</option>
                             <option value="260 ">"Zambia"</option>
                             <option value="263 ">"Zimbabwe"</option>
-            
+
                         </select>
+                    </div><br>
+
+                    <div>
                         <div class="info_label"><label for="usertel" class="info_label">Tel.</label></div>
-                        <div class="info_label"><input type="tel" class="user" id="mid" name="tel"></div>
-                    </div>
+                        <div class="info_label"><input type="tel" class="user" id="usertel" name="tel"></div>
+                    </div><br>
                 </fieldset>
                 <br>
 
@@ -281,12 +291,13 @@
             <button class="btn4" onclick="location.href='GETest.html'"> MAIN </button>
         </div>
     </div>
-rr
+
 </body>
 
 <script>
     // Methods
     function sbevent() {
+        console.log("click!!");
         window.open('popup.html', "a", "width=400, height=300, left=100, top=50");   // submit 버튼 클릭 팝업
     }
 
@@ -300,12 +311,16 @@ rr
         chkevent.disabled = false;
     }}
 
-    //let selectBoxChange = function(value){
-	//$("#changeinput").val(value);
-//}
-
 
 
 </script>
 
 </html>
+
+<!-- 
+    // mysql에서 delete시, id 번호 초기화
+delete from info;
+ALTER TABLE info auto_increment=1;
+set @count =0;
+update info set id=@count:=@count+1;
+ -->
